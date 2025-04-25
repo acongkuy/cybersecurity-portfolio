@@ -64,7 +64,7 @@ Saya telah secara langsung mengirimkan laporan kerentanan kepada pihak sekolah D
 - **Clickjacking** pada website darunnajah.ac.id
 - **Allocation of Resources Without Limits or Throttling (CWE-770)**
 
-📎 Laporan dikirim dalam bentuk PDF dan dapat dilihat melalui repositori GitHub saya.
+📎 Semua laporan saya dapat dilihat melalui repositori GitHub saya.(https://github.com/acongkuy/cybersecurity-portfolio)
 
 ---
 
