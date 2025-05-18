@@ -1,89 +1,98 @@
-# Portofolio Keamanan Siber oleh Ramdhani – Kelas 6D MAK, 2025
+# 🛡️ Portofolio Keamanan Siber: Penelitian dan Pengujian Aplikasi Web
 
-**Nama**: Ramdhani  
-**Kelas**: 6D MAK  
-**Asal Sekolah**: Darunnajah  
-**Tahun**: 2025  
-**GitHub**: [https://github.com/acongkuy](https://github.com/acongkuy)  
-**HackerOne**: [https://hackerone.com/chunsky](https://hackerone.com/chunsky)
-
----
-
-## 1. Pendahuluan
-
-Saya adalah siswa kelas 6D MAK di Darunnajah yang memiliki minat dalam bidang keamanan siber. Sejak tahun 2025, saya mulai aktif melakukan eksplorasi, pengujian, dan pelaporan kerentanan keamanan baik di platform internasional seperti HackerOne maupun secara langsung ke instansi sekolah saya. Portofolio ini merangkum pengalaman dan kontribusi saya dalam praktik keamanan siber selama tahun 2025.
+**Nama:** Ramdhani  
+**Kelas:** 6D MAK  
+**Asal Sekolah:** Darunnajah  
+**Tahun:** 2025  
+**GitHub:** [@acongkuy](https://github.com/acongkuy)  
+**HackerOne:** [@chunsky](https://hackerone.com/chunsky)  
+**LinkedIn:** [acong-walnut](https://www.linkedin.com/in/acong-walnut-a88207363)
 
 ---
 
-## 2. Bug Bounty di HackerOne
+## 1. 📘 Pendahuluan
 
-Saya berpartisipasi dalam program bug bounty di platform **HackerOne** untuk mengasah kemampuan teknis dan pemahaman saya terhadap kerentanan keamanan aplikasi.
+Saya adalah siswa kelas 6D MAK di Darunnajah dengan minat besar pada **keamanan siber**. Sejak tahun 2025, saya aktif dalam eksplorasi, pengujian, dan pelaporan kerentanan keamanan, baik melalui platform bug bounty internasional seperti **HackerOne**, maupun secara langsung kepada pihak sekolah.  
 
-**Ringkasan laporan**:
-- Total laporan: 5
-  - **1 valid**
-  - **1 duplicate/late**
-  - **3 not applicable**
-
-**Jenis kerentanan yang pernah saya laporkan**:
-- Allocation of Resources Without Limits or Throttling (CWE-770)
-- UI Redressing / Clickjacking (CAPEC-103)
-- Cleartext Transmission of Sensitive Information (CWE-319)
-
-🔗 **Profil HackerOne saya**: [https://hackerone.com/chunsky](https://hackerone.com/chunsky)
+Portofolio ini merangkum pengalaman, temuan, serta kontribusi saya dalam praktik keamanan siber selama tahun 2025.
 
 ---
 
-## 3. Audit dan Pelaporan Keamanan di Lingkungan Sekolah
+## 2. 🐞 Bug Bounty di HackerOne
 
-### 3.1 Audit Website darunnajah.ac.id Berdasarkan Model OSI Layer
+Saya aktif berpartisipasi dalam program **bug bounty di HackerOne** untuk meningkatkan kemampuan teknis dan memahami berbagai jenis kerentanan.
 
-Saya melakukan analisis keamanan terhadap website resmi sekolah saya, **darunnajah.ac.id**, dengan pendekatan OSI Layer menggunakan berbagai tools open-source.
+### 📊 Ringkasan Laporan:
+- **Total laporan:** 8  
+  - ✅ 1 valid-resolved  
+  - ♻️ 2 duplicate/late  
+  - 🚫 3 not applicable  
+  - ⏳ 2 under review
 
-**Layer 7 – Application Layer**  
-- Tidak terdapat header `X-Frame-Options` dan `X-Content-Type-Options`.  
-  → Potensi risiko: clickjacking dan content-type sniffing.  
-- HTTP redirect dari http ke https terdeteksi.
+### 📌 Jenis Kerentanan yang Pernah Dilaporkan:
+- Allocation of Resources Without Limits or Throttling (CWE-770)  
+- UI Redressing / Clickjacking (CAPEC-103)  
+- Cleartext Transmission of Sensitive Information (CWE-319)  
+- Cross-site Scripting (XSS) – Reflected / Stored / DOM (CWE-79)  
+- Improper Authorization in Handler for Custom URL Scheme (CWE-939)
 
-**Layer 6 – Presentation Layer**  
-- Website mendukung TLS 1.2 dan 1.3 dengan cipher yang kuat.  
-- Tidak ditemukan kerentanan renegotiation maupun Heartbleed.
-
-**Layer 4 – Transport Layer**  
-- Port 80 dan 443 terbuka.  
-- Mendukung HTTP/2 dan HTTP/3.
-
-**Layer 3 – Network Layer**  
-- Akses stabil via IPv6, tanpa packet loss.  
-- Terhubung melalui rute internasional via Cloudflare.
-
-### 3.2 Laporan Keamanan ke Pihak Sekolah
-
-Saya telah secara langsung mengirimkan laporan kerentanan kepada pihak sekolah Darunnajah, di antaranya:
-
-- **Clickjacking** pada website darunnajah.ac.id
-- **Allocation of Resources Without Limits or Throttling (CWE-770)**
-
-📎 Semua laporan saya dapat dilihat melalui repositori GitHub saya.(https://github.com/acongkuy/cybersecurity-portfolio)
+📍 **Profil HackerOne:** [https://hackerone.com/chunsky](https://hackerone.com/chunsky)
 
 ---
 
-## 4. Tools yang Digunakan
+## 3. 🔍 Audit dan Pelaporan Keamanan di Lingkungan Sekolah
 
-Dalam melakukan pengujian dan audit, saya menggunakan beberapa tools berikut:
+### 3.1 🔬 Audit Website darunnajah.ac.id Berdasarkan Model OSI Layer
 
-- **Nikto** – Pemindaian aplikasi web
-- **Nmap** – Port dan network scanning
-- **Rapidscan** – Pemindaian kerentanan otomatis
-- **Subfinder** – Deteksi subdomain
-- **Slowloris** – Simulasi serangan DoS
-- **Ping**, **Traceroute**, **Curl**, **Sslyze** – Analisis jaringan dan TLS
+#### Layer 7 – Application Layer
+- ❌ Tidak terdapat header `X-Frame-Options` dan `X-Content-Type-Options` → **Potensi risiko: clickjacking & content-type sniffing**
+- 🔁 HTTP redirect dari `http` ke `https` terdeteksi
+
+#### Layer 6 – Presentation Layer
+- ✅ Mendukung TLS 1.2 dan 1.3 dengan cipher kuat
+- 🛡️ Tidak ditemukan Heartbleed maupun masalah renegotiation
+
+#### Layer 4 – Transport Layer
+- 🔓 Port 80 dan 443 terbuka
+- 🚀 Mendukung HTTP/2 dan HTTP/3
+
+#### Layer 3 – Network Layer
+- 📶 Stabil via IPv6, tanpa packet loss
+- 🌐 Routing melalui Cloudflare internasional
+
+### 3.2 📩 Laporan Keamanan ke Pihak Sekolah
+
+Saya telah mengirimkan laporan kerentanan berikut ke pihak sekolah:
+
+- ⚠️ Clickjacking pada website Darunnajah  
+- ⚠️ Allocation of Resources Without Limits or Throttling (CWE-770)
+
+📁 Semua laporan lengkap tersedia di repositori ini:  
+🔗 [GitHub Repo: cybersecurity-portfolio](https://github.com/acongkuy/cybersecurity-portfolio)
 
 ---
 
-## 5. Penutup
+## 4. 🧰 Tools yang Digunakan
 
-Portofolio ini menggambarkan kontribusi awal saya dalam dunia keamanan siber. Saya percaya bahwa dengan terus belajar dan berkontribusi, saya dapat berkembang menjadi individu yang mampu memberikan dampak positif dalam bidang ini, baik secara lokal maupun global.
+Berikut tools yang saya gunakan dalam aktivitas pengujian dan audit keamanan:
+
+- **Burp Suite** – Web vulnerability testing  
+- **Nikto** – Web server scanner  
+- **Nmap** – Port & network scanning  
+- **Rapidscan** – Otomatisasi scanning  
+- **Subfinder** – Subdomain enumeration  
+- **Slowloris** – DoS simulation  
+- **Ping, Traceroute, Curl, Sslyze** – Network & TLS analysis  
+- **Amass** – Subdomain enumeration  
+- **XSStrike** – XSS payload automation  
+- DLL
 
 ---
 
+## 5. 🧾 Penutup
+
+Portofolio ini merupakan dokumentasi awal dari perjalanan saya di dunia **cybersecurity**. Saya percaya bahwa dengan terus belajar, bereksperimen, dan berbagi temuan, saya bisa berkontribusi secara positif dalam menjaga keamanan informasi—baik di tingkat lokal maupun global.
+
+---
+
+> 🔐 “Security is not a product, but a process.” – Bruce Schneier
