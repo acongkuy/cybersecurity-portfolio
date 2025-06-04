@@ -37,6 +37,7 @@ Saya aktif berpartisipasi dalam program **bug bounty di HackerOne** untuk mening
 - Improper Authorization in Handler for Custom URL Scheme (CWE-939)
 
 📍 **Profil HackerOne:** [https://hackerone.com/chunsky](https://hackerone.com/chunsky)
+
 ---
 
 ## 3. 🔍 Audit dan Penanganan Kerentanan pada Subdomain simak.darunnajah.ac.id/login
