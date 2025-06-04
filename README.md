@@ -37,36 +37,35 @@ Saya aktif berpartisipasi dalam program **bug bounty di HackerOne** untuk mening
 - Improper Authorization in Handler for Custom URL Scheme (CWE-939)
 
 📍 **Profil HackerOne:** [https://hackerone.com/chunsky](https://hackerone.com/chunsky)
-
 ---
 
-## 3. 🔍 Audit dan Pelaporan Keamanan di Lingkungan Sekolah
+## 3. 🔍 Audit dan Penanganan Kerentanan pada Subdomain simak.darunnajah.ac.id/login
 
-### 3.1 🔬 Audit Website darunnajah.ac.id Berdasarkan Model OSI Layer
+### 3.1 📝 Latar Belakang
 
-#### Layer 7 – Application Layer
-- ❌ Tidak terdapat header `X-Frame-Options` dan `X-Content-Type-Options` → **Potensi risiko: clickjacking & content-type sniffing**
-- 🔁 HTTP redirect dari `http` ke `https` terdeteksi
+Subdomain ini adalah aplikasi berbasis PHP dengan framework CodeIgniter. Saat diuji, input karakter khusus `'` menyebabkan error PHP terkait pengelolaan sesi pengguna. Selain itu, versi jQuery yang dipakai adalah 1.2.1, yang sudah lama dan rawan serangan XSS serta manipulasi DOM.
 
-#### Layer 6 – Presentation Layer
-- ✅ Mendukung TLS 1.2 dan 1.3 dengan cipher kuat
-- 🛡️ Tidak ditemukan Heartbleed maupun masalah renegotiation
+### 3.2 ⚠️ Temuan Kerentanan
 
-#### Layer 4 – Transport Layer
-- 🔓 Port 80 dan 443 terbuka
-- 🚀 Mendukung HTTP/2 dan HTTP/3
+* 🛑 **Masalah Pengelolaan Sesi:** Sesi pengguna tidak diinisialisasi atau diakses dengan benar, berpotensi bocor data atau kegagalan autentikasi.
+* 🔍 **Input Tidak Aman:** Input karakter khusus bisa picu error dan membuka celah injeksi atau XSS.
+* 📉 **jQuery Versi Lama:** Versi 1.2.1 rentan terhadap XSS dan manipulasi DOM yang berbahaya.
+* 💥 **Penanganan Error Buruk:** Pesan error teknis langsung tampil ke pengguna, bisa jadi bahan eksploitasi.
 
-#### Layer 3 – Network Layer
-- 📶 Stabil via IPv6, tanpa packet loss
-- 🌐 Routing melalui Cloudflare internasional
+### 3.3 💥 Dampak
 
-### 3.2 📩 Laporan Keamanan ke Pihak Sekolah
+* 🔐 Risiko bocornya data pengguna dan celah keamanan aplikasi.
+* 😕 Pengalaman pengguna buruk karena munculnya pesan error teknis.
+* ⚠️ Potensi eksploitasi dari pustaka jQuery yang sudah usang.
 
-Saya telah mengirimkan laporan kerentanan berikut ke pihak sekolah:
+### 3.4 💡 Rekomendasi Perbaikan
 
-- ⚠️ Clickjacking pada website Darunnajah  
-- ⚠️ Allocation of Resources Without Limits or Throttling (CWE-770)
+* 🔒 Sanitasi & validasi input ketat, gunakan `htmlspecialchars()` atau `addslashes()`.
+* 🛠️ Pastikan sesi diinisialisasi dan dicek sebelum dipakai.
+* 🚫 Terapkan error handling aman, jangan tampilkan pesan teknis ke pengguna.
+* ⬆️ Update jQuery ke versi terbaru (misal 3.x), pakai Content Security Policy (CSP) & Subresource Integrity (SRI).
 
+---
 📁 Semua laporan lengkap tersedia di repositori ini:  
 🔗 [GitHub Repo: cybersecurity-portfolio](https://github.com/acongkuy/cybersecurity-portfolio)
 
