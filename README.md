@@ -12,7 +12,7 @@
 
 ## 1. 📘 Pendahuluan
 
-Saya adalah siswa kelas 6D MAK di Darunnajah dengan minat besar pada **keamanan siber**. Sejak tahun 2025, saya aktif dalam eksplorasi, pengujian, dan pelaporan kerentanan keamanan, baik melalui platform bug bounty internasional seperti **HackerOne**, maupun secara langsung kepada pihak sekolah.  
+Saya adalah siswa lulusan tahun 2025 kelas 6D MAK di Darunnajah dengan minat besar pada **keamanan siber**. Sejak tahun 2025, saya aktif dalam eksplorasi, pengujian, dan pelaporan kerentanan keamanan, baik melalui platform bug bounty internasional seperti **HackerOne**, maupun secara langsung kepada pihak sekolah.  
 
 Portofolio ini merangkum pengalaman, temuan, serta kontribusi saya dalam praktik keamanan siber selama tahun 2025.
 
